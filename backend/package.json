@@ -1,0 +1,12 @@
+{
+  "name": "kanbano-backend",
+  "version": "1.0.0",
+  "description": "A task management app",
+  "license": "ISC",
+  "author": "Mouise Bashir",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "node --import amaro/strip src/index.ts"
+  }
+}
