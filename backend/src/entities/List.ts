@@ -13,7 +13,7 @@ export class List{
     this.id = id;
     this.title = title;
     this.boardId = boardId;
-    // cards should be empty 
+    this.cards = [];
     this.position = position;
     this.createdAt = new Date();
     this.updatedAt = new Date();
@@ -32,11 +32,11 @@ export class List{
   }
 
 
-  addCard(newCard: Card): boolean{
-    if(!newCard.id || !newCard.id.trim()) throw new Error("Id for card can't be null");
-    if(!newCard.title || !newCard.title.trim()) throw new Error("title for card can't be null");
-    if(this.cards.some(card => card.id === newCard.id)) throw new Error("Card with this ID already exists");
-    this.cards.push(newCard);
+  addCard(card: Card): boolean{
+    if(!card.id || !card.id.trim()) throw new Error("Id for card can't be null");
+    if(!card.title || !card.title.trim()) throw new Error("title for card can't be null");
+    if(this.cards.some(card => card.id === card.id)) throw new Error("Card with this ID already exists");
+    this.cards.push(card);
     this.updatedAt = new Date();
     console.log(`New card has been succesfully added to the list:${this.title}`);
     return true;

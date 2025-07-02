@@ -6,10 +6,10 @@ export class Card {
   createdAt: Date;
   updatedAt: Date;
 
-  constructor(id: string, title: string, description: string, completed = false) {
+  constructor(id: string, title: string, description?: string, completed = false) {
     this.id = id;
     this.title = title;
-    this.description = description;
+    this.description = description || "";
     this.completed = completed;
     this.createdAt = new Date();
     this.updatedAt = new Date();
